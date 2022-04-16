@@ -1,14 +1,22 @@
 language: java
-install:
-  - sudo add-apt-repository ppa:openjdk-r/ppa -y
-  - sudo apt-get update -y
-  - sudo apt-get install openjdk-8-jdk -y
-  - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-  - export PATH=$JAVA_HOME/bin:$PATH
+sudo: false
+
+jdk:
+  - oraclejdk8
+# install:
+#   - sudo add-apt-repository ppa:openjdk-r/ppa -y
+#   - sudo apt-get update -y
+#   - sudo apt-get install openjdk-8-jdk -y
+#   - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#   - export PATH=$JAVA_HOME/bin:$PATH
 script : 
   - mvn clean
   - mvn evosuite:generate 
   - mvn evosuite:export 
   - mvn test
   - mvn evosuite:info
+
+
+
+
 
