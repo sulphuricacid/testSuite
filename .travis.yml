@@ -1,8 +1,9 @@
 language: java
 install:
-  - ls /usr/lib/jvm/
   - sudo add-apt-repository ppa:openjdk-r/ppa -y
   - sudo apt-get update -y
   - sudo apt-get install openjdk-8-jdk -y
+  - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+  - export PATH=$JAVA_HOME/bin:$PATH
 script : mvn evosuite:generate evosuite:export test
 
