@@ -6,6 +6,9 @@ install:
   - export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
   - export PATH=$JAVA_HOME/bin:$PATH
 script : 
-  - mvn evosuite:generate evosuite:export test
+  - mvn clean
+  - mvn evosuite:generate 
+  - mvn evosuite:export 
+  - mvn test
   - mvn evosuite:info
 
