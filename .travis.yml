@@ -1,4 +1,4 @@
 language: java
-install: apt-get install openjdk-11-jdk
+install: sudo apt-get install openjdk-11-jdk
 script : mvn evosuite:generate evosuite:export test
 
